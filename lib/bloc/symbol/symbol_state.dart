@@ -17,4 +17,7 @@ class SymbolLoaded extends SymbolState {
   ActiveSymbol? get selectedSymbol => _selectedSymbol;
 }
 
-class SymbolError extends SymbolState {}
+class SymbolError extends SymbolState {
+  final String error;
+  SymbolError(this.error);
+}

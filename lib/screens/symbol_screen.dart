@@ -1,8 +1,8 @@
 import 'package:deriv_app_sample/bloc/symbol/symbol_bloc.dart';
+import 'package:deriv_app_sample/widgets/contract_widget.dart';
 import 'package:deriv_app_sample/widgets/symbol_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../widgets/custom_drop_down.dart';
 
 class SymbolScreen extends StatefulWidget {
   @override
@@ -34,7 +34,8 @@ class _SymbolScreenState extends State<SymbolScreen> {
             children: [
               Text('Active Symbols'),
               SymbolWidget(),
-              //CustomDropDown(),
+              Text('Available Contracts'),
+              ContractWidget(),
             ],
           ),
         ),

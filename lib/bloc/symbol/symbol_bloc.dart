@@ -17,12 +17,12 @@ class SymbolBloc extends Bloc<SymbolEvent, SymbolState> {
       try {
         final List<ActiveSymbol> symbols =
             await ActiveSymbol.fetchActiveSymbols(const ActiveSymbolsRequest(
-          activeSymbols: 'brief',
+          activeSymbols: 'full',
           productType: 'basic',
         ));
         yield SymbolLoaded(symbols: symbols);
       } catch (error) {
-        yield SymbolError();
+        yield SymbolError(error.toString());
       }
     } else if (event is SelectSymbol) {
       if (state is SymbolLoaded) {
