@@ -27,8 +27,9 @@ class SymbolBloc extends Bloc<SymbolEvent, SymbolState> {
     } else if (event is SelectSymbol) {
       if (state is SymbolLoaded) {
         final SymbolLoaded loadedState = state as SymbolLoaded;
-
-        yield SymbolLoaded(symbols: loadedState.symbols);
+        yield SymbolLoaded(
+            symbols: loadedState.symbols,
+            selectedSymbol: event.selectdEventSymbol);
       } else {
         yield SymbolLoading();
         add(GetSymbolList());
@@ -36,3 +37,15 @@ class SymbolBloc extends Bloc<SymbolEvent, SymbolState> {
     }
   }
 }
+
+// abstract class SymbolEvent {}
+//
+// class GetSymbolList extends SymbolEvent {
+//   GetSymbolList();
+// }
+//
+// class SelectSymbol extends SymbolEvent {
+//   SelectSymbol(this.index);
+//
+//   final int index;
+// }

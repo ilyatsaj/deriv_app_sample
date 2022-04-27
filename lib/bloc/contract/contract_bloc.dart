@@ -3,7 +3,6 @@ import 'package:deriv_app_sample/bloc/symbol/symbol_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_deriv_api/api/common/active_symbols/active_symbols.dart';
 import 'package:flutter_deriv_api/api/contract/contracts_for/contracts_for_symbol.dart';
-import 'package:flutter_deriv_api/api/contract/models/available_contract_model.dart';
 
 import 'package:flutter_deriv_api/basic_api/generated/api.dart';
 
@@ -22,6 +21,7 @@ class ContractBloc extends Bloc<ContractEvent, ContractState> {
       }
     });
   }
+
   @override
   Stream<ContractState> mapEventToState(ContractEvent event) async* {
     if (event is GetContractList) {

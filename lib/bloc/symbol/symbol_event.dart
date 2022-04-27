@@ -1,15 +1,13 @@
 part of 'symbol_bloc.dart';
 
-abstract class SymbolEvent {
-  const SymbolEvent();
-}
+abstract class SymbolEvent {}
 
 class GetSymbolList extends SymbolEvent {
   GetSymbolList();
 }
 
 class SelectSymbol extends SymbolEvent {
-  SelectSymbol(this.index);
+  SelectSymbol(this.selectdEventSymbol);
 
-  final int index;
+  final ActiveSymbol? selectdEventSymbol;
 }

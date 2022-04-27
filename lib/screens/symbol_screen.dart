@@ -1,8 +1,10 @@
+import 'package:deriv_app_sample/bloc/contract/contract_bloc.dart';
 import 'package:deriv_app_sample/bloc/symbol/symbol_bloc.dart';
-import 'package:deriv_app_sample/widgets/contract_widget.dart';
 import 'package:deriv_app_sample/widgets/symbol_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../themes.dart';
 
 class SymbolScreen extends StatefulWidget {
   @override
@@ -26,16 +28,16 @@ class _SymbolScreenState extends State<SymbolScreen> {
           BlocProvider(
             create: (context) => SymbolBloc(),
           ),
+          BlocProvider(
+            create: (context) => ContractBloc(SymbolBloc()),
+          ),
         ],
         child: Container(
-          padding: EdgeInsets.all(20),
+          padding: kGeneralPadding,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Active Symbols'),
               SymbolWidget(),
-              Text('Available Contracts'),
-              ContractWidget(),
             ],
           ),
         ),

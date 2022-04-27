@@ -10,7 +10,7 @@ class SymbolLoading extends SymbolState {}
 
 class SymbolLoaded extends SymbolState {
   SymbolLoaded({this.symbols, ActiveSymbol? selectedSymbol})
-      : _selectedSymbol = selectedSymbol ?? symbols!.first;
+      : _selectedSymbol = selectedSymbol;
 
   final List<ActiveSymbol>? symbols;
   final ActiveSymbol? _selectedSymbol;

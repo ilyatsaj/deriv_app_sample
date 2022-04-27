@@ -1,8 +1,6 @@
 part of 'contract_bloc.dart';
 
-abstract class ContractEvent {
-  const ContractEvent();
-}
+abstract class ContractEvent {}
 
 class GetContractList extends ContractEvent {
   GetContractList({this.symbol});

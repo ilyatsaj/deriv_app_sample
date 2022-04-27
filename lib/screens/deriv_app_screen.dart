@@ -40,7 +40,11 @@ class _DerivAppState extends State<DerivApp> {
         ],
         child: Scaffold(
           appBar: AppBar(
-            title: const Text('Deriv App Sample'),
+            backgroundColor: Colors.black87,
+            title: const Text(
+              'Deriv App Sample',
+              style: TextStyle(color: Colors.redAccent),
+            ),
           ),
           body: BlocBuilder<api.ConnectionCubit, api.ConnectionState>(
             builder: (
